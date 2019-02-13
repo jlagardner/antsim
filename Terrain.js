@@ -1,6 +1,6 @@
 function Terrain() {
   this.width = 500
-  this.height = 400
+  this.height = 500
 
   this.food = []
 
