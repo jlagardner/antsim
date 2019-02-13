@@ -5,6 +5,7 @@ function Ant(intial_position) {
   this.img = loadImage('assets/ant.png');
   this.energy = 10
   this.carrying_food = false
+  this.time_of_last_pheremone_detection = 0
 
   this.show = function() {
     strokeWeight(1)
