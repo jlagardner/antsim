@@ -6,11 +6,11 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   imageMode(CENTER)
   terrain = new Terrain()
-  colony = new Colony(40, createVector(random(terrain.width), random(terrain.height)), createVector(terrain.width, terrain.height))
+  colony = new Colony(40, createVector(random(terrain.width / 2), random(terrain.height / 2)), createVector(terrain.width, terrain.height))
   colony.terrain = terrain
   dt = 0.5
   for (i = 0; i < 3; i++) {
-    terrain.food.push(new FoodSource(createVector(random(terrain.width), random(terrain.height))))
+    terrain.food.push(new FoodSource(createVector(random(terrain.width * 0.6, terrain.width * 0.8), random(terrain.height * 0.6, terrain.height * 0.8))))
   }
 }
 
@@ -36,4 +36,6 @@ function draw() {
   buffer = 13
   rect(-buffer, -buffer, terrain.width + 2 * buffer, terrain.height + 2 * buffer)
   pop()
+  fill(0)
+  text("Number of ants: " + colony.population.length, 0, terrain.height + 20)
 }

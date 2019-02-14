@@ -23,10 +23,8 @@ function Colony(population_size, mound_pos, extent) {
     }
     fill(0)
     ellipse(this.entrance_co_ords.x, this.entrance_co_ords.y, 20, 20)
-    for (let j = 0; j < this.mound_food; j++) {
-      fill(0, 255, 0)
-      ellipse(this.entrance_co_ords.x, this.entrance_co_ords.y - j * 8, 8, 8)
-    }
+    fill(0, 255, 0)
+    ellipse(this.entrance_co_ords.x, this.entrance_co_ords.y, this.mound_food * 1.5 + 2)
   }
 
   this.advance_time_step = function(dt) {
